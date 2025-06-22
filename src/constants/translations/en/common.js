@@ -1,4 +1,6 @@
 export default {
-  subject: 'Subject',
-  message: 'Message',
+  subject: 'Başlık',
+  message: 'Mesaj',
+  chooseAppLanguage: 'Uygulama dilini seçin',
+  chooseLanguage: 'Bir dil seçin',
 };
