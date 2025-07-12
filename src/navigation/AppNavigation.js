@@ -1,6 +1,7 @@
 import {StatusBar, Text} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {useTranslation} from 'react-i18next';
 
 import GooglemapsScreen from '../screens/GooglemapsScreen';
 import YandexMap from '../screens/YandexMap';
@@ -13,6 +14,7 @@ import '../constants/DCSLocalize';
 const Tab = createBottomTabNavigator();
 
 const AppNavigation = () => {
+  const {t, i18n} = useTranslation();
   return (
     <NavigationContainer>
       <StatusBar
@@ -46,7 +48,11 @@ const AppNavigation = () => {
           component={LifeStack}
           options={({route}) => ({
             tabBarIcon: ({focused}) => (
-              <TabBarIcon focused={focused} text={'Hayatı'} Icon={CardsIcon} />
+              <TabBarIcon
+                focused={focused}
+                text={t('t:life')}
+                Icon={CardsIcon}
+              />
             ),
           })}
         />
@@ -75,7 +81,7 @@ const AppNavigation = () => {
             tabBarIcon: ({focused}) => (
               <TabBarIcon
                 focused={focused}
-                text={'Biz hakda'}
+                text={t('t:aboutus')}
                 Icon={SalesIcon}
               />
             ),

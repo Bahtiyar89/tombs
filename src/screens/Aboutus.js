@@ -1,16 +1,14 @@
 import React, {useRef, useState} from 'react';
 import {
   StyleSheet,
-  TextInput,
   View,
   Text,
-  Pressable,
-  Button,
   Linking,
   TouchableOpacity,
   Alert,
 } from 'react-native';
 import {useTranslation} from 'react-i18next';
+import Clipboard from '@react-native-clipboard/clipboard';
 import BottomSheet from 'react-native-gesture-bottom-sheet';
 import CopySvg from '../svgs/CopySvg';
 
@@ -21,13 +19,12 @@ const LANGUAGES = [
 
 const Aboutus = () => {
   const {t, i18n} = useTranslation();
-  const [text, onChangeText] = React.useState('');
   const bottomSheet = useRef();
-  const [showModal, setShowModal] = useState(false);
 
   const selectedLanguageCode = i18n.language;
-  const onPressFunction = () => {
-    console.log('pressed');
+  const onPressCopy = () => {
+    Clipboard.setString('veliler@yaani.com');
+    Alert.alert(t('t:copied'));
   };
 
   const setLanguage = code => {
@@ -54,8 +51,9 @@ const Aboutus = () => {
           color: 'black',
           fontWeight: 'bold',
           fontSize: 16,
+          textAlign: 'center',
         }}>
-        Öneri ve istekleriniz için aşagıdaki maile tıklayın
+        {t('t:suggestion')}
       </Text>
 
       <View
@@ -82,7 +80,7 @@ const Aboutus = () => {
           </Text>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => Alert.alert('mail adresi kopyalandı')}>
+        <TouchableOpacity onPress={onPressCopy}>
           <CopySvg />
         </TouchableOpacity>
       </View>
