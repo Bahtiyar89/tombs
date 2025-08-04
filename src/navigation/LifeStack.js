@@ -14,7 +14,7 @@ const LifeStackScreen = () => {
         options={{
           title: t('t:life'),
           headerStyle: {
-            backgroundColor: '#f4511e',
+            backgroundColor: '#00ADEF',
           },
           headerTintColor: '#fff',
           headerTitleStyle: {

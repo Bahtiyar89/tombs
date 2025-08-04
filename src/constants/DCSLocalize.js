@@ -3,11 +3,11 @@ import {initReactI18next} from 'react-i18next';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as RNLocalize from 'react-native-localize';
 
-import en from './translations/en';
+import tr from './translations/tr';
 import ru from './translations/ru';
 
 const LANGUAGES = {
-  en,
+  tr,
   ru,
 };
 const LANG_CODES = Object.keys(LANGUAGES);
@@ -26,10 +26,10 @@ const LANGUAGE_DETECTOR = {
           console.log('No language is set, choosing English as fallback');
         }
 
-        callback('ru');
+        callback('tr');
         return;
       }
-      callback('ru');
+      callback('tr');
     });
   },
   init: () => {

@@ -7,4 +7,7 @@ export default {
   copied: '«Mail adresi kopyalandı»',
   aboutus: 'Biz hakda',
   life: 'Hayatı',
+  in_development: 'Yapım aşamasında',
+  see_more: 'Daha fazla',
+  see_less: 'Daha az',
 };

@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {FlatList, View, Text, StyleSheet, StatusBar} from 'react-native';
 import ReadMore from '@fawazahmed/react-native-read-more';
+import {useTranslation} from 'react-i18next';
 
 import Countries from '../components/Countries';
 import State from '../components/State';
@@ -8,6 +9,7 @@ import Towns from '../components/Towns';
 import database from '../database/data.json';
 
 const LifeScreen = () => {
+  const {t, i18n} = useTranslation();
   const [countrycode, setCountrycode] = useState(null);
   const [state, setState] = useState(null);
   const [town, setTown] = useState(null);
@@ -79,7 +81,13 @@ const LifeScreen = () => {
         renderItem={({index, item}) => (
           <View key={index} style={{padding: 10}}>
             <Text style={{fontWeight: '900'}}>{item.ismi}</Text>
-            <ReadMore numberOfLines={3} style={{fontSize: 14}}>
+            <ReadMore
+              numberOfLines={3}
+              style={{fontSize: 14}}
+              seeMoreStyle={{color: '#00ADEF'}}
+              seeLessStyle={{color: '#00ADEF'}}
+              seeMoreText={t('t:see_more')}
+              seeLessText={t('t:see_less')}>
               {item.life}
             </ReadMore>
           </View>

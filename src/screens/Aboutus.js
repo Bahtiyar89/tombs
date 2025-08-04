@@ -68,14 +68,14 @@ const Aboutus = () => {
         <TouchableOpacity
           style={{
             padding: 10,
-            backgroundColor: '#2096f3',
+            backgroundColor: '#00ADEF',
             height: 40,
             borderRadius: 5,
             alignItems: 'center',
             justifyContent: 'center',
           }}
           onPress={() => Linking.openURL('mailto:veliler@yaani.com')}>
-          <Text style={{color: 'white', fontWeight: 'bold', fontSize: 16}}>
+          <Text style={{color: 'black', fontWeight: 'bold', fontSize: 16}}>
             veliler@yaani.com
           </Text>
         </TouchableOpacity>

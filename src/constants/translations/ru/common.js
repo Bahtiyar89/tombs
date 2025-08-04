@@ -8,4 +8,7 @@ export default {
   copied: '«Адрес электронной почты скопирован»',
   aboutus: 'О нас',
   life: 'Жизнь',
+  in_development: 'В разработке',
+  see_more: 'Eще больше',
+  see_less: 'Eще меньше',
 };
