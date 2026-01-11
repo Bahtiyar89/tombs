@@ -1,15 +1,21 @@
 import React, {useEffect, useState} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import {Dropdown} from 'react-native-element-dropdown';
+import {useTranslation} from 'react-i18next';
 import statesData from '../jsons/states.json';
 
 export default function Regions({country, state, setState}) {
+  const {t} = useTranslation();
   const [isFocus, setIsFocus] = useState(false);
   const [iller, setIller] = useState([]);
 
   const renderLabel = () => {
     if (state || isFocus) {
-      return <Text style={[styles.label, isFocus && {color: 'blue'}]}>il</Text>;
+      return (
+        <Text style={[styles.label, isFocus && {color: 'blue'}]}>
+          {t('t:region')}
+        </Text>
+      );
     }
     return null;
   };
@@ -48,8 +54,8 @@ export default function Regions({country, state, setState}) {
         maxHeight={300}
         labelField="label"
         valueField="value"
-        placeholder={!isFocus ? 'il seç' : '...'}
-        searchPlaceholder="Search..."
+        placeholder={!isFocus ? t('t:choose_region') : '...'}
+        searchPlaceholder={t('t:search')}
         value={state}
         onFocus={() => setIsFocus(true)}
         onBlur={() => setIsFocus(false)}

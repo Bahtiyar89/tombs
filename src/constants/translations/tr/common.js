@@ -10,4 +10,9 @@ export default {
   in_development: 'Yapım aşamasında',
   see_more: 'Daha fazla',
   see_less: 'Daha az',
+  choose_country: 'Ülke seç',
+  choose_region: 'il seç',
+  search: 'Ara...',
+  country: 'Ülke',
+  region: 'il',
 };

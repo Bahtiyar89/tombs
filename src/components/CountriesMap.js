@@ -25,14 +25,14 @@ const CountriesMap = ({country, setCountry}) => {
         key: c.key,
         label: `${c.name}`,
         value: c.key,
+        latitude: c.latitude,
+        longitude: c.longitude,
       };
     });
     console.log('out: ', out);
 
     return out;
   };
-
-  console.log('country: ', country);
 
   useEffect(() => {
     setCountries(getCountryOptions());
@@ -58,7 +58,7 @@ const CountriesMap = ({country, setCountry}) => {
         onFocus={() => setIsFocus(true)}
         onBlur={() => setIsFocus(false)}
         onChange={item => {
-          setCountry(item.value);
+          setCountry(item);
           setIsFocus(false);
         }}
       />

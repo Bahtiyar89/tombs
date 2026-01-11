@@ -13,8 +13,10 @@ import BottomSheet from 'react-native-gesture-bottom-sheet';
 import CopySvg from '../svgs/CopySvg';
 
 const LANGUAGES = [
-  {code: 'en', label: 'Türkçe'},
+  {code: 'tr', label: 'Türkçe'},
   {code: 'ru', label: 'Русский'},
+  {code: 'uz', label: "O'zbek"},
+  {code: 'tm', label: 'Türkmençe'},
 ];
 
 const Aboutus = () => {
@@ -28,6 +30,7 @@ const Aboutus = () => {
   };
 
   const setLanguage = code => {
+    bottomSheet.current.close();
     return i18n.changeLanguage(code);
   };
 
@@ -36,7 +39,8 @@ const Aboutus = () => {
       style={{
         height: '100%',
         display: 'flex',
-        alignItems: 'center',
+        paddingLeft: 20,
+        paddingRight: 20,
         justifyContent: 'center',
       }}>
       <TouchableOpacity
@@ -137,14 +141,15 @@ const styles = StyleSheet.create({
   },
   selectedText: {
     fontSize: 18,
-    fontWeight: '600',
-    color: 'tomato',
+    fontWeight: '900',
+    color: '#00ADEF',
     paddingVertical: 4,
     textAlign: 'center',
   },
   text: {
     padding: 10,
     fontSize: 18,
+    fontWeight: '500',
     color: '#000',
     paddingVertical: 4,
     textAlign: 'center',
@@ -158,7 +163,7 @@ const styles = StyleSheet.create({
   chooseLanguage: {
     textAlign: 'center',
     marginTop: 20,
-    fontWeight: '700',
+    fontWeight: '900',
     fontSize: 16,
     color: '#000',
   },

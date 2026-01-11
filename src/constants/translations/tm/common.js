@@ -1,0 +1,18 @@
+export default {
+  subject: 'Ady',
+  message: 'Habar',
+  chooseAppLanguage: 'Programmanyň dilini saýlaň.',
+  chooseLanguage: 'Dil saýlaň',
+  suggestion: 'Teklipler we haýyşlar üçin aşakdaky e-poçta salgysyna basyň.',
+  copied: '«E-poçta salgysy göçürildi.»',
+  aboutus: 'Biz barada',
+  life: 'Ömri',
+  in_development: 'Gurluşyk işleri dowam edýär',
+  see_more: 'Has köp',
+  see_less: 'Az',
+  choose_country: 'Ýurt saýlaň',
+  choose_region: 'welaýat saýlaň',
+  search: 'Gözleg...',
+  country: 'Ýurt',
+  region: 'welaýat',
+};

@@ -11,4 +11,9 @@ export default {
   in_development: 'В разработке',
   see_more: 'Eще больше',
   see_less: 'Eще меньше',
+  choose_country: 'Выберите Страну',
+  choose_region: 'Выберите область',
+  search: 'Поиск...',
+  country: 'Страна',
+  region: 'Область',
 };

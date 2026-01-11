@@ -21,10 +21,10 @@ export default function StateMap({country, state, setState}) {
 
     const data = statesData
       .filter(function (item) {
-        return item.key == country;
+        return item.key == country?.key;
       })
-      .map(function ({plaka, il_adi}) {
-        return {key: plaka, label: il_adi, value: plaka};
+      .map(function ({plaka, il_adi, lat, lon}) {
+        return {key: plaka, label: il_adi, value: plaka, lat: lat, lon: lon};
       });
 
     return data;
@@ -54,7 +54,7 @@ export default function StateMap({country, state, setState}) {
         onFocus={() => setIsFocus(true)}
         onBlur={() => setIsFocus(false)}
         onChange={item => {
-          setState(item.value);
+          setState(item);
           setIsFocus(false);
         }}
       />

@@ -69,6 +69,7 @@ const LifeScreen = () => {
   console.log('country: ', countrycode);
   console.log('town: ', town);
   console.log('state: ', state);
+  console.log('ll: ', i18n.language === 'tm');
 
   return (
     <View>
@@ -88,7 +89,15 @@ const LifeScreen = () => {
               seeLessStyle={{color: '#00ADEF'}}
               seeMoreText={t('t:see_more')}
               seeLessText={t('t:see_less')}>
-              {item.life}
+              {i18n.language === 'tm'
+                ? item.life_tm
+                : i18n.language === 'kz'
+                ? item.life_kz
+                : i18n.language === 'uz'
+                ? item.life_uz
+                : i18n.language === 'ru'
+                ? item.life_ru
+                : item.life}
             </ReadMore>
           </View>
         )}

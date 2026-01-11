@@ -1,0 +1,18 @@
+export default {
+  subject: 'Sarlavha',
+  message: 'Xabar',
+  chooseAppLanguage: 'Ilova tilini tanlang',
+  chooseLanguage: 'Tilni tanlang',
+  suggestion: 'Taklif va sorovlaringiz uchun quyidagi elektron pochtani bosing',
+  copied: '«Elektron pochta manzili kochirildi»',
+  aboutus: 'Biz haqmiz',
+  life: 'Hayotiy',
+  in_development: 'Qurilish bosqichida',
+  see_more: 'Batafsil',
+  see_less: 'Kamroq',
+  choose_country: 'Mamlakatni tanlang',
+  choose_region: 'viloyatni tanlang',
+  search: 'Qidir...',
+  country: 'Mamlakat',
+  region: 'viloyat',
+};

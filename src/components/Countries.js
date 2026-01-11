@@ -1,16 +1,20 @@
 import React, {useEffect, useState} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import {Dropdown} from 'react-native-element-dropdown';
+import {useTranslation} from 'react-i18next';
 import countrycodes from '../jsons/countries.json';
 
 const Countries = ({country, setCountry}) => {
+  const {t} = useTranslation();
   const [isFocus, setIsFocus] = useState(false);
   const [countries, setCountries] = useState([]);
 
   const renderLabel = () => {
     if (country || isFocus) {
       return (
-        <Text style={[styles.label, isFocus && {color: 'blue'}]}>ülke</Text>
+        <Text style={[styles.label, isFocus && {color: 'blue'}]}>
+          {t('t:country')}
+        </Text>
       );
     }
     return null;
@@ -27,12 +31,8 @@ const Countries = ({country, setCountry}) => {
         value: c.key,
       };
     });
-    console.log('out: ', out);
-
     return out;
   };
-
-  console.log('country: ', country);
 
   useEffect(() => {
     setCountries(getCountryOptions());
@@ -52,8 +52,8 @@ const Countries = ({country, setCountry}) => {
         maxHeight={300}
         labelField="label"
         valueField="value"
-        placeholder={!isFocus ? 'Ülke seç' : '...'}
-        searchPlaceholder="Search..."
+        placeholder={!isFocus ? t('t:choose_country') : '...'}
+        searchPlaceholder={t('t:search')}
         value={country}
         onFocus={() => setIsFocus(true)}
         onBlur={() => setIsFocus(false)}

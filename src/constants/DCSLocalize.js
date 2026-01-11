@@ -5,10 +5,16 @@ import * as RNLocalize from 'react-native-localize';
 
 import tr from './translations/tr';
 import ru from './translations/ru';
+import kz from './translations/kz';
+import uz from './translations/uz';
+import tm from './translations/tm';
 
 const LANGUAGES = {
   tr,
   ru,
+  kz,
+  uz,
+  tm,
 };
 const LANG_CODES = Object.keys(LANGUAGES);
 

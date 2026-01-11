@@ -7,11 +7,8 @@ import {
   Modal,
   Text,
   Pressable,
-  Animated,
   SafeAreaView,
-  Dimensions,
   ScrollView,
-  Button,
   Alert,
 } from 'react-native';
 import MapView, {Marker} from 'react-native-maps';
@@ -151,10 +148,28 @@ export default function HomeScreen() {
 
   useEffect(() => {
     setDb(getCountryOptions());
+
+    Geolocation.getCurrentPosition(position => {
+      setLocation({
+        latitude: countrycode?.latitude,
+        longitude: countrycode?.longitude,
+        latitudeDelta: 5,
+        longitudeDelta: 0.01,
+      });
+    });
   }, [countrycode]);
 
   useEffect(() => {
     setDb(getStateOptions());
+
+    Geolocation.getCurrentPosition(position => {
+      setLocation({
+        latitude: state?.lat,
+        longitude: state?.lon,
+        latitudeDelta: 1,
+        longitudeDelta: 0.01,
+      });
+    });
   }, [state]);
 
   useEffect(() => {
@@ -162,6 +177,7 @@ export default function HomeScreen() {
   }, [town]);
 
   console.log('r: ', ev);
+  console.log('state: 2', state);
 
   return (
     <View style={styles.container}>
@@ -211,7 +227,7 @@ export default function HomeScreen() {
           margin: 0,
           top: 80,
           right: 0,
-          width: 150,
+          width: '55%',
         }}>
         <CountriesMap country={countrycode} setCountry={setCountrycode} />
         <StateMap country={countrycode} state={state} setState={setState} />
